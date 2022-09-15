@@ -7,7 +7,7 @@ With `whisperer it is possible to encrypt data that is sent by URL
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'whisperer'
+gem 'whisperer', git: 'https://github.com/GustavoDuarteM/whisperer'
 ```
 
 And then execute:
