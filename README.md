@@ -1,8 +1,6 @@
 # Whisperer
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/whisperer`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+With `whisperer it is possible to encrypt data that is sent by URL
 
 ## Installation
 
@@ -20,19 +18,34 @@ Or install it yourself as:
 
     $ gem install whisperer
 
+## settings`
+
+You need some settings to use whisperer
+
+```
+ Whisperer.configure do |config|
+  config.key = 'very-secret-key'
+  config.cipher = OpenSSL::Cipher.new('aes-256-cbc') 
+ end
+ ```
+
 ## Usage
 
-TODO: Write usage instructions here
+to encrypt 
 
-## Development
+```
+Whisperer.encrypt('my favorite-phrase')
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+to decrypt 
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```
+Whisperer.decrypt('encrypted-phrase')
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/whisperer. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/whisperer/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/GustavoDuarteM/whisperer. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/GustavoDuarteM/whisperer/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
